@@ -1,0 +1,144 @@
+#include <unistd.h>
+
+void ft_is_negative (int n)
+{
+	if (n >= 0)
+		{
+		write (1, "P\n", 2);
+		}
+	else
+		{
+		write(1, "N\n", 2);
+		}
+}
+
+#include <unistd.h>
+
+void ft_print_alphabet(void)
+{
+	write(1, "abcdefghijklmnopqrstuvwxyz", 26);
+}
+
+#include <unistd.h>
+
+void ft_print_comb(void){
+char tab[3];
+tab[0]='0';
+tab[1]='1';
+tab[2]='2';
+char tabl[2];
+tabl[0]=',';
+tabl[1]=' ';
+while (tab[0]<='9'){
+tab[1]=tab[0]+1;
+	while (tab[1]<='9'){
+	tab[2]=tab[1]+1;
+		while (tab[2]<='9'){
+			write (1 , tab , 3);
+			if (tab[0]!='7'){
+			write (1 , tabl, 2);}
+			tab[2]++;
+			}
+		tab[1]++;
+		}
+	tab[0]++;
+	}
+}
+
+#include <unistd.h>
+
+void ft_print_comb2 (void){
+char num1[2];
+char num2[2];
+char esp =' ';
+
+num1[0]='0';
+    while (num1[0]<='9'){
+    num1[1]='0';
+        while(num1[1]<='9'){
+        num2[0]=num1[0];
+            while(num2[0]<='9'){
+            num2[1]=num1[1]+1;
+                while (num2[1]<='9'){
+                write (1 , num1 , 2);
+                write (1 , &esp , 1);
+                write (1 , num2 , 2);
+                if (num1[0]!='9' || num1[1]!='8'){
+                write (1 , ", " , 2);}
+                num2[1]++;
+                }
+            num2[0]++;
+            }
+        num1[1]++;
+        }
+    num1[0]++;
+    }
+}
+
+#include <unistd.h>
+
+void ft_print_combn(int n){
+char n1[n];
+int i;
+n1[0]='0';
+
+while (i <= n) {
+while (i <= n){
+	i++;
+	n1[0 + i]++;
+}	
+	write (1 , n1 , n);
+
+}
+	write (1 , ", ", 2);
+
+
+
+}
+
+#include <unistd.h>
+
+void ft_print_reverse_alphabet (void)
+{
+	write(1 , "zyxwvutsrqponmlkjihgfedcba" , 26);
+}
+
+void ft_putchar (char c)
+{
+	write(1, &c, 1);
+}
+
+#include <unistd.h>
+
+void ft_putnbr(int nb) {
+
+if (nb < 0) {
+char moins = '-';
+write (1, &moins, 1);
+nb = -nb;
+}
+
+int a =1;
+int b = nb;
+while (b !=  0) {
+b /= 10;
+a *= 10;
+}
+
+a /= 10;
+
+int num[10];
+int i=0;
+while (nb > 9) {
+num [i] = nb / a;
+num [i] = '0' + num [i];
+write (1 , &num[i] , 1);
+nb %= a;
+a /=10;
+i++;
+}
+
+nb = '0' + nb;
+write (1 , &nb , 1);
+
+}
