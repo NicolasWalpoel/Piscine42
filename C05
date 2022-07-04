@@ -1,0 +1,9 @@
+#include <unistd.h>
+
+void print_addr (char a) {
+char *ptr;
+ptr = &a;
+char hex[17] = "0123456789abcdef";
+	write (1 , &ptr, 1);
+	/*write (1 , &hex[*(ptr)%16] , 1);*/
+}
