@@ -1,0 +1,175 @@
+int ft_atoi (char *str) {
+while (str[0] == ' ')
+	{
+	int i = 0;
+	while (str[i])
+		{
+		str[i] = str[i+1];
+		i++;
+		}
+	}
+
+int y = 0;
+int signe = 0;
+while (str[y] < '0')
+	{
+	if (str[y] == '-')
+		{
+		signe++;
+		}
+	y++;
+	}
+
+int y1 = y;
+int nb = 0;
+int nbnb = 1;
+while (str[y]<='9' && str[y]>='0')
+	{
+	nbnb *= 10;
+	y++;
+	}
+
+while (str[y1]<='9' && str[y1]>='0')
+	{
+	if (str[y1] != '0')
+		{
+		nb += str[y1]*nbnb;
+		}
+	nbnb /= 10;
+	y1++;
+	}
+
+signe %= 2;
+if (signe == 1)
+	{
+	nb *= -1;
+	}
+
+return nb;
+}
+
+int ft_iterative_factorial (int nb) {
+if (nb >= 0)
+	{
+	int i = nb;
+	while (nb > 1)
+		{
+		i *= (nb-1);
+		nb--;
+		return i;
+		}
+	}
+else 
+	{
+	return 0;
+	}
+}
+
+#include <unistd.h>
+
+void ft_putnbr (int nb) {
+char moins = '-';
+if (nb < 0) 
+	{
+	write (1 , &moins , 1);
+	nb = -nb;
+	}
+
+int a = 1;
+int b = nb;
+while (nb > 0) 
+	{
+	nb /= 10;
+	a *= 10;
+	}
+a /= 10;
+while (a > 0)
+	{
+	nb = b/a;
+	b %= a; 
+	a /= 10;
+	nb = '0' + nb;
+	write (1 ,&nb , 1);
+	}
+}
+
+#include <unistd.h>
+
+void ft_putstr (char *str) { 
+int i = 0;
+while (str[i] != '\0') 
+	{
+	write (1 , str[i]  , 1);
+	i++;
+	}
+}
+
+int ft_recursive_factorial (int nb){
+if (nb > 0)
+	{
+	while (nb > 1) 
+		{
+		i *= (nb--);
+		ft_recusive_factorial (nb); 
+		}
+	return nb;
+	}
+else 
+	{
+	return 0;
+	}
+}
+
+#include <unistd.h>
+#include "rush01.c"
+
+int main () {
+	rush (50 , 15);
+return 0;
+}
+
+void rush (int x,  int y) {
+int b = 1;
+char coin = 'O';
+char largeur = '-';
+char longueur = '|';
+char space = ' ';
+char retour = '\n';
+
+if (x < 0 || y < 0)
+{
+	x = 0;
+	y = 0;
+}
+
+while (b <= y) {
+	int a = 1;
+	while (a <= x) {
+		if ( ((a==1) && (b==1)) || ((a==x) && (b==1)) || ((a==1) && (b==y)) || ((a==x) && (b==y)) ) {
+		write (1 , &coin , 1);
+		}
+		else if ((b==1) || (b==y)) {
+		write (1 , &largeur , 1);
+		} 
+		else if ((a==1) || (a==x)) {
+		write (1 , &longueur , 1);
+		}
+		else {
+		write (1 , &space ,1);
+		}
+	a++;
+	}
+write (1 , &retour , 1);
+b++;
+}
+
+}
+
+int ft_ft_strlen(char *str) {
+int i = 0;
+while (str[i] != '\0') 
+	{	
+	i++;
+	}
+return i++;
+}
