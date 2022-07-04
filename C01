@@ -1,0 +1,133 @@
+#include <unistd.h>
+
+void ft_div_mod (int a ,int b, int *div, int *mod) {
+*div = a/b;
+*mod = a%b;
+}
+
+#include <unistd.h>
+
+void ft_ft (int *nbr) {
+*nbr = 42;
+}
+
+#include <unistd.h>
+
+void ft_putnbr(int nb) {
+
+if (nb < 0) {
+char moins = '-';
+write (1, &moins, 1);
+nb = -nb;
+}
+
+int a = 1;
+int b = nb;
+while (b !=  0) {
+	b /= 10;
+	a *= 10;
+	}
+
+a /= 10;
+
+int num[10];
+int i=0;
+while (nb > 9) {
+	num [i] = nb / a;
+	num [i] = '0' + num [i];
+	write (1 , &num[i] , 1);
+	nb %= a;
+	a /=10;
+	i++;
+	}
+
+nb = '0' + nb;
+write (1 , &nb , 1);
+
+}
+
+#include <unistd.h>
+
+void ft_putstr (char *str) {
+int i=0;
+while ( *(str+i) != '\0' ) {
+	write (1 ,(str+i), 1);
+	i++;
+}
+
+}
+
+#include <unistd.h>
+
+void ft_rev_int_tab ( int *tab, int size) {
+int i , j;
+i =0;
+j = size-1;
+int swap; 
+
+while (i != (size/2) ) {
+swap = *(tab+i);
+*(tab+i)= *(tab+j);
+*(tab+j)= swap; 
+j--;
+i++;
+}
+
+
+}
+
+#include <unistd.h>
+
+void ft_sort_int_tab (int *tab, int size) {
+int i;
+int j =0;
+int tampon;
+while (j < size) {
+	i = 0;
+	while (i < size) {
+		if (tab[i] > tab[i + 1]) { 
+			tampon = tab[i];
+			tab[i] = tab[i+1];
+			tab[i+1] = tampon;
+		}
+	i++;
+	}
+j++;
+}
+
+}
+
+#include <unistd.h>
+
+int ft_strlen (char *str) {
+int i = 0;
+while (*(str+i) != '\0') {
+i++;
+}
+return i;
+}
+
+#include <unistd.h>
+
+void ft_swap (int *a, int *b) {
+int tampon;
+tampon = *a;
+*a = *b;
+*b = tampon;
+}
+
+#include <unistd.h>
+
+void ft_ultimate_div_mod (int *a, int *b) {
+int c, d;
+c = (*a)/(*b);
+d = (*a)%(*b);
+*a = c;
+*b = d;
+}
+
+#include <unistd.h>
+
+void ft_ultimate_ft (int *********nbr) {
+*********nbr = 42;
+}
