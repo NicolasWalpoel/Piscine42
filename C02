@@ -1,0 +1,275 @@
+#include <unistd.h>
+#include "ft_print_addr.c"
+
+void *ft_print_memory (void *addr, unsigned int size) {
+	
+	return addr;
+}
+
+#include <unistd.h>
+
+void ft_putstr_non_printable (char *str) {
+
+
+
+
+TOUT REFAIRE CONNARD !!!!!
+
+
+
+
+
+int n = 0;
+while (*(str+n) != '\0') {
+	n++;
+	}
+n = n+1;
+
+
+char bonjour = '\b' + '\b';
+int i = 0;
+int y = 0;
+int z = 0;
+int a = 0;
+char tampon;
+char null = '!' - ' ';
+
+while (*(str+a) != '\0') {
+	i = a;
+	if (*(str+i) < ' ') {
+		tampon = *(str+i);
+		while (n > i) {
+			*(str+n) = *(str+n+2);
+			n--;
+			}
+		*(str+i) = '[' + 1;
+	
+
+		if (*(str+i) <= bonjour) {
+			*(str+i+1) = '0' ;
+			}
+		else {
+			*(str+i+1) = '1';
+			}
+			
+		while ( tampon >= null ) {
+			tampon--;
+			y++;
+			}
+		
+		z = (y%16);
+		
+		if ((y <= 9) || ((y >= 16) && (y <= 25))) {
+			*(str+i+2) = '0' + z;
+			}
+		else {
+			*(str+i+2) = 'X' +z;
+			}
+		a += 2;	
+		
+		}
+	
+	else {}
+	
+	a++;
+	}
+
+write (1 , str , 30);	
+	
+}
+
+#include <unistd.h>
+
+int ft_str_is_alpha (char *str) {
+
+if (*str != 0) {
+int i = 0;
+int y = 0;
+while (*(str+i) != '\0') {
+	if ( (*(str+i) >= 'A' && *(str+i) <= 'Z') || (*(str+i) >= 'a' && *(str+i) <= 'z') ) {
+		y++;
+		}
+	else {
+		}
+	i++;
+	}
+
+	if (*(str+y) != '\0') {
+		return (0);	
+		}
+
+	else {
+		return (1);
+		}
+}
+
+else {
+return (1);
+}
+
+}
+
+#include <unistd.h>
+
+int ft_str_is_numeric (char *str) {
+if (*str != 0) {
+int i = 0;
+int y = 0;
+while (*(str+i) != '\0') {
+        if ( *(str+i) >= '0' && *(str+i) <= '9') {
+                y++;
+                }
+        else {
+                }
+        i++;
+        }
+
+        if (*(str+y) != '\0') {
+                return (0);
+                }
+
+        else {
+                return (1);
+                }
+}
+
+else {
+return (1);
+}
+
+
+
+
+}
+
+#include <unistd.h>
+
+char *ft_strcapitalize (char *str) {
+int i = 0;
+while (*(str+i) != '\0') {
+	if ( (*(str+i) <= 'z' && *(str+i) >= 'a') ) {
+		if ( (*(str+i-1) < '0') || (*(str+i-1) > '9' && *(str+i-1) < 'A' ) || (*(str+i-1) > 'Z' && *(str+i-1) < 'a') || (*(str+i-1) > 'z') ) {
+			*(str+i) -= ' ';
+			}
+		else {}
+		}
+	else if ( (*(str+i) <= 'Z' && *(str+i) >= 'A') ) {
+		if ( (*(str+i-1) >= '0' && *(str+i-1) <= '9') || (*(str+i) >= 'A' && *(str+i) <= 'Z')  || (*(str+i) >= 'a' && *(str+i-1) <= 'z') ) {
+			*(str+i) += ' ';
+			}
+		else {}
+		}
+	else {}
+i++;
+}
+
+return (str);
+}
+
+#include <unistd.h>
+
+char *ft_strcpy (char *dest, char *src) {
+int i = -1;
+while (*(src+i) != '\0'){
+i++;
+*(dest+i) = *(src+i);
+}
+
+return (dst);
+}
+
+#include <unistd.h>
+
+unsigned int ft_strlcpy (char *dest, char *src, unsigned int size) {
+
+
+
+
+
+
+
+
+}
+
+#include <unistd.h>
+
+char *ft_strlowcase (char *str) {
+int i = 0;
+while (*(str+i) != 0) {
+        if (*(str+i) <= 'Z' && *(str+i) >= 'A') {
+                *(str+i) += ' ';
+                }
+        i++;
+        }
+return str;
+}
+
+
+#include <unistd.h>
+
+char *ft_strncpy (char *dest, char *src, unsigned int n) {
+
+n = 0;
+while (*(src+n) != '\0') {
+n++;
+}
+
+
+
+
+
+
+if (*(dest+n) = '\0') {
+int i = -1;
+	while (*(src+i) != '\0'){
+		i++;
+		*(dest+i) = *(src+i);
+	}
+return (dst);
+}
+
+
+
+
+
+
+else if (*(dest+n) = '') {
+int y = 0;
+	while (*(src+y) != '\0'){
+		*(dest+y) = *(src+y);
+		y++;
+		}
+	dest[n]= '\0';
+return (dest[n]);
+}
+
+
+
+
+
+
+
+else {
+int z = 0;
+	while (z < n) {
+		*(dest+z) = *(src+z);
+		z++;
+		}
+	*(dest+n) = '\0';
+return (dst);
+}
+
+}
+
+#include <unistd.h>
+
+char *ft_strupcase (char *str) {
+int i = 0;
+while (*(str+i) != 0) {
+	if (*(str+i) <= 'z' && *(str+i) >= 'a') {
+		*(str+i) -= ' ';
+		}
+	i++;
+	}
+return str;
+}
