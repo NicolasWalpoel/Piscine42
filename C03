@@ -1,0 +1,95 @@
+char *ft_strcat (char *dest, char *src) {
+int n = 0;
+int m = 0;
+int i = 0;
+while (*(dest+n) != '\0')
+	{
+	n++;
+	}
+n++;
+while (*(src+m) != '\0')
+	{
+	m++;
+	}
+while (i <= m)
+	{
+	*(dest+n+i) = *(src+i);
+	i++;
+	}
+*(dest+n+i) = '\0';
+
+return dest;
+}
+
+int ft_strcmp (char *str1 ,char *str2) {
+int i = 0;
+while (str1[i] == str2[i] && str1[i] != '\0')
+	{
+	i++;
+	}
+
+return ( str1[i] - str2[i] );
+}
+
+unsigned int ft_strlcat(char *dest, char *src, unsigned int size) {
+
+
+
+
+
+
+
+
+
+
+}
+
+char *ft_strncat (char *dest , char *src , unsigned int nb) {
+int y = 0;
+while (dest[y] != '\0')
+	{
+	y++;
+	}
+int i = 0;
+while (i < nb)
+	{
+	dest[y + i] = src [i];	
+	i++;
+	}
+return (dest);
+}
+
+int ft_strncmp (char *s1, char *s2, unsigned int n)
+{
+int i;
+while ( s1[i] == s2[i] && s1 && s2 && n > 0)
+	{
+	i++;
+	n--;
+	}
+return s1[i]-s2[i];
+}
+
+char *ft_strstr(char *str, char *to_find) {
+	int i = 0;
+	int y = 0;
+	while (to_find[y] != '\0')
+		{
+		if (str[i] == to_find[y])
+			{
+			y++;
+			}
+		else if (str[i]!=to_find[y])
+			{
+			y = 0;
+			}
+		else {}
+		i++;
+		}
+	while (str[i] != '\0') 
+		{
+		str[i] = '\0';
+		i++;
+		}	
+return str;
+}
